@@ -15,6 +15,11 @@ const Navbar = () => {
       <Link to="/" className="text-xl font-bold text-blue-600">E-SHOP</Link>
       <div className="flex gap-6 items-center">
         <Link to="/" className="text-gray-600 hover:text-blue-600">Catálogo</Link>
+        {token && (
+          <Link to="/admin/products/create" className="text-gray-600 hover:text-blue-600 font-medium">
+            + Novo Produto
+          </Link>
+        )}
         {token ? (
           <button onClick={logout} className="flex items-center gap-2 text-red-500">
             <LogOut size={18} /> Sair

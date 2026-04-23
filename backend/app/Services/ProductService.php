@@ -18,4 +18,12 @@ class ProductService {
     public function storeProduct(array $data) {
         return $this->repository->create($data);
     }
+
+    public function updateProduct($id, array $data) {
+        return $this->repository->update($id, $data);
+    }
+
+    public function deleteProduct($id) {
+        return $this->repository->delete($id);
+    }
 }

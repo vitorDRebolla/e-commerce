@@ -32,4 +32,14 @@ class ProductController extends Controller {
         $product = $this->service->storeProduct($data);
         return new ProductResource($product);
     }
+
+    public function update(Request $request, $id){
+        $product = $this->service->updateProduct($id, $request->all());
+        return new ProductResource($product);
+    }
+
+    public function destroy($id){
+        $this->service->deleteProduct($id);
+        return response()->json(['message' => 'Produto removido com sucesso']);
+    }
 }
